@@ -6,21 +6,20 @@ pipeline {
     }
     
     environment {
-        SCANNER_HOME= tool 'sonar-scanner-tool' // tool name configured in jenkins
+        SCANNER_HOME = tool 'sonar-scanner-tool' // tool name configured in Jenkins
     }
 
     stages {
-    /*
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ibtisamops/Agri2Ops.git'
+                git branch: 'main', url: 'https://github.com/ibtisamops/3TierJavaBoardGameDB-H2.git'
             }
         }
-  */      
+        
         stage('Compile') {
             steps {
                 dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
-                sh "mvn compile"
+                    sh "mvn compile"
                 }
             }
         }
@@ -36,16 +35,14 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
-                    withSonarQubeEnv('sonar-server') {                 // server name configured in jenkins
+                    withSonarQubeEnv('sonar-server') { // server name configured in Jenkins
                         sh '''
-                        $SCANNER_HOME/bin/sonar-scanner \              
+                        $SCANNER_HOME/bin/sonar-scanner \
+                        -Dsonar.projectName=Boardgame \
+                        -Dsonar.projectKey=boardgame \
+                        -Dsonar.java.binaries=target \
+                        -Dsonar.branch.name=ibtisam
                         '''
-                        /*
-                            -Dsonar.projectName=Boardgame \
-                            -Dsonar.projectKey=boardgame \
-                            -Dsonar.java.binaries=target \
-                            -Dsonar.branch.name=ibtisam
-                        */
                     }
                 }
             }
@@ -55,7 +52,7 @@ pipeline {
             steps {
                 dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     timeout(time: 1, unit: 'HOURS') {
-                        waitForQualityGate abortPipeline: false
+                        waitForQualityGate abortPipeline: true
                     }
                 }
             }
@@ -73,6 +70,13 @@ pipeline {
             steps {
                 echo 'Love you, Sweetheart'
             }
+        }
+    }
+
+    post {
+        always {
+            // Clean up the workspace after the build
+            cleanWs()
         }
     }
 }
