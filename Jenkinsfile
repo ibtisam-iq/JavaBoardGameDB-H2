@@ -44,7 +44,7 @@ pipeline {
                         -Dsonar.branch.name=ibtisam
                         '''
                     }
-                }
+            
             }
         }
         
