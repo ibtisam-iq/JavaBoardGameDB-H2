@@ -20,7 +20,7 @@ pipeline {
             steps {
                //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     sh "mvn compile"
-                }
+                
             }
         }
         
@@ -28,7 +28,7 @@ pipeline {
             steps {
                //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     sh "mvn test"
-                }    
+                    
             }
         }
         
@@ -54,7 +54,7 @@ pipeline {
                     timeout(time: 1, unit: 'HOURS') {
                         waitForQualityGate abortPipeline: true
                     }
-                }
+                
             }
         }
         
@@ -62,7 +62,7 @@ pipeline {
             steps {
                 //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     sh "mvn package"
-                }
+                
             }
         }
         
