@@ -18,7 +18,7 @@ pipeline {
         
         stage('Compile') {
             steps {
-                dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
+               //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     sh "mvn compile"
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
+               //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     sh "mvn test"
                 }    
             }
@@ -34,7 +34,7 @@ pipeline {
         
         stage('SonarQube Analysis') {
             steps {
-                dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
+                //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     withSonarQubeEnv('sonar-server') { // server name configured in Jenkins
                         sh '''
                         $SCANNER_HOME/bin/sonar-scanner \
@@ -50,7 +50,7 @@ pipeline {
         
         stage('Quality Gate Check') {
             steps {
-                dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
+                //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     timeout(time: 1, unit: 'HOURS') {
                         waitForQualityGate abortPipeline: true
                     }
@@ -60,7 +60,7 @@ pipeline {
         
         stage('Package') {
             steps {
-                dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
+                //dir('03.Projects/00.LocalOps/0.1.01-jar_Boardgame') {
                     sh "mvn package"
                 }
             }
