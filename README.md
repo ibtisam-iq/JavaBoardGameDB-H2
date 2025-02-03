@@ -3,7 +3,10 @@
 ## Description
 
 **Board Game Database Full-Stack Web Application.**
-This web application displays lists of board games and their reviews. While anyone can view the board game lists and reviews, they are required to log in to add/ edit the board games and their reviews. The 'users' have the authority to add board games to the list and add reviews, and the 'managers' have the authority to edit/ delete the reviews on top of the authorities of users.  
+This web application displays lists of board games and their reviews. While anyone can view the board game lists and reviews, users are required to log in to add or edit board games and their reviews. The application supports different roles with varying levels of permissions:
+- **Non-members**: Can view board game lists and reviews.
+- **Users**: Can add board games and write reviews.
+- **Managers**: Can edit and delete reviews, in addition to the permissions of users.
 
 ## Technologies
 
@@ -24,33 +27,46 @@ This web application displays lists of board games and their reviews. While anyo
 
 ## Features
 
-- Full-Stack Application
-- UI components created with Thymeleaf and styled with Twitter Bootstrap
-- Authentication and authorization using Spring Security
-  - Authentication by allowing the users to authenticate with a username and password
-  - Authorization by granting different permissions based on the roles (non-members, users, and managers)
-- Different roles (non-members, users, and managers) with varying levels of permissions
-  - Non-members only can see the boardgame lists and reviews
-  - Users can add board games and write reviews
-  - Managers can edit and delete the reviews
-- JUnit test framework for unit testing
-- Spring MVC best practices to segregate views, controllers, and database packages
-- JDBC for database connectivity and interaction
-- CRUD (Create, Read, Update, Delete) operations for managing data in the database
-- Schema.sql file to customize the schema and input initial data
-- Thymeleaf Fragments to reduce redundancy of repeating HTML elements (head, footer, navigation)
+- **Full-Stack Application**: Combines front-end and back-end technologies.
+- **UI Components**: Created with Thymeleaf and styled with Twitter Bootstrap.
+- **Authentication and Authorization**: Implemented using Spring Security.
+  - **Authentication**: Users authenticate with a username and password.
+  - **Authorization**: Different permissions based on roles (non-members, users, and managers).
+- **Role-Based Access Control**:
+  - **Non-members**: View board game lists and reviews.
+  - **Users**: Add board games and write reviews.
+  - **Managers**: Edit and delete reviews.
+- **Unit Testing**: JUnit test framework for unit testing.
+- **Spring MVC Best Practices**: Segregates views, controllers, and database packages.
+- **Database Connectivity**: JDBC for database interaction.
+- **CRUD Operations**: Manage data in the database.
+- **Schema Customization**: `schema.sql` file to customize the schema and input initial data.
+- **Thymeleaf Fragments**: Reduce redundancy of repeating HTML elements (head, footer, navigation).
 
 ## How to Run
 
-1. Clone the repository
-2. Open the project in your IDE of choice
-3. Run the application
-4. To use initial user data, use the following credentials.
-  - username: **ibtisam**      |     password: **123** (user role)
-  - username: **ibtisamops**   |     password: **12345**  (manager role)
-5. You can also sign-up as a new user and customize your role to play with the application!
+1. **Clone the Repository**
+2. **Open the Project**: Open the project in your IDE of choice.
+3. **Run the Application**: Execute the application from your IDE.
+4. **Initial User Data**: Use the following credentials to log in:
+   - **User Role**: 
+     - Username: `ibtisam`
+     - Password: `123`
+   - **Manager Role**:
+     - Username: `ibtisamops`
+     - Password: `12345`
+5. **Sign-Up**: You can also sign up as a new user and customize your role to explore the application.
 
 ## Project Structure
+
+The project follows a standard Spring Boot structure with the following key directories and files:
+- `src/main/java`: Contains the Java source code.
+  - `controller`: Handles HTTP requests and responses.
+  - `service`: Contains the business logic.
+  - `repository`: Manages data access and database interactions.
+  - `model`: Defines the data models and entities.
+- `src/main/resources`: Contains configuration files and static resources.
+  - `application.properties`: Configuration file for database and other settings.
 
 Please refer to `consoleOutput.txt` for more details. 😊
 
