@@ -51,10 +51,10 @@ This web application displays lists of board games and their reviews. While anyo
 4. **Initial User Data**: Use the following credentials to log in:
    - **User Role**: 
      - Username: `ibtisam`
-     - Password: `123`
+     - Password: `ibtisam`
    - **Manager Role**:
-     - Username: `ibtisamops`
-     - Password: `12345`
+     - Username: `ibtisam`
+     - Password: `ibtisam`
 5. **Sign-Up**: You can also sign up as a new user and customize your role to explore the application.
 
 ## Project Structure
