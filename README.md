@@ -49,6 +49,7 @@ This web application displays lists of board games and their reviews. While anyo
 2. **Open the Project**: Open the project in your IDE of choice.
 3. **Run the Application**: Execute the application from your IDE.
 4. **Initial User Data**: Use the following credentials to log in:
+        `src/main/java/com/javaproject/security/SecurityConfig.java`
    - **User Role**: 
      - Username: `ibtisam`
      - Password: `ibtisam`
