@@ -82,9 +82,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withDefaultSchema()
                 .passwordEncoder(passwordEncoder)
                 .withUser("ibtisam")
-                .password(passwordEncoder.encode("123")).roles("USER")
+                .password(passwordEncoder.encode("ibtisam")).roles("USER")
                 .and()
-                .withUser("ibtisamops")
-                .password(passwordEncoder.encode("12345")).roles("USER", "MANAGER");
+                .withUser("ibtisam")
+                .password(passwordEncoder.encode("ibtisam")).roles("USER", "MANAGER");
     }
 }
