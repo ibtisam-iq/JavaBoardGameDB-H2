@@ -66,7 +66,7 @@ The project follows a standard Spring Boot structure with the following key dire
   - `repository`: Manages data access and database interactions.
   - `model`: Defines the data models and entities.
 - `src/main/resources`: Contains configuration files and static resources.
-  - `application.properties`: Configuration file for database and other settings.
+  - **`application.properties`**: Configuration file for database and other settings.
 
 Please refer to `consoleOutput.txt` for more details. 😊
 
