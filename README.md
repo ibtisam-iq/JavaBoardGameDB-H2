@@ -71,5 +71,14 @@ The project follows a standard Spring Boot structure with the following key dire
 
 Please refer to `consoleOutput.txt` for more details. 😊
 
+## Docker Images
+
+```bash
+ibtisam@mint-dell:~/SilverOps/DevOps/DevOps-Tools/docker/01-JavaBoardGameDB-H2$ docker images
+REPOSITORY                    TAG                  IMAGE ID       CREATED          SIZE
+single-stage-build            latest               7de7322c5e69   3 minutes ago    487MB
+multi-stage-build             latest               813bb4bfbf9a   11 minutes ago   374MB
+```
+
 ## Project Snapshot
 ![Project Snapshot](./projectSnapshot.png)
