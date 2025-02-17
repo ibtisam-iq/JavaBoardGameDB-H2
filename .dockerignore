@@ -1,0 +1,15 @@
+.git/
+images/
+manifest/
+terraform/
+consoleOutput.txt
+Jenkinsfile
+README.md
+sonar-project.properties
+.dockerignore
+.gitignore
+.env
+target/
+!target/*.jar
+
+

@@ -38,8 +38,8 @@ pipeline {
                     withSonarQubeEnv('sonar-server') { // server name configured in Jenkins
                         sh '''
                         $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectName=Boardgame \
-                        -Dsonar.projectKey=boardgame \
+                        -Dsonar.projectName=IbtisamX \
+                        -Dsonar.projectKey=ibtisamx \
                         -Dsonar.java.binaries=target \
                         -Dsonar.branch.name=ibtisam
                         '''
